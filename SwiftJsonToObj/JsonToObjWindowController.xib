@@ -8,6 +8,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="JsonToObjWindowController" customModule="SwiftJsonToObj" customModuleProvider="target">
             <connections>
                 <outlet property="classNameTextField" destination="Xys-aT-GLY" id="IFT-eX-Qmq"/>
+                <outlet property="formatSegmentedControl" destination="OLd-J8-Vye" id="thn-mp-doz"/>
                 <outlet property="jsonTextView" destination="mBi-Av-YGr" id="Cjm-wi-2dn"/>
                 <outlet property="msgTextField" destination="clK-RZ-Nwh" id="cSD-MB-ylf"/>
                 <outlet property="objTextView" destination="XAB-VT-zhG" id="kQ8-Jf-sse"/>
@@ -154,7 +155,7 @@
                         <rect key="frame" x="20" y="20" width="440" height="30"/>
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="776-bT-xIH">
-                                <rect key="frame" x="14" y="-2" width="70" height="32"/>
+                                <rect key="frame" x="274" y="-2" width="70" height="32"/>
                                 <buttonCell key="cell" type="push" title="clear" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jLX-jw-vtZ">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -173,13 +174,25 @@
                                     <action selector="onSubmitButtonClick:" target="-2" id="WX2-1s-E6m"/>
                                 </connections>
                             </button>
+                            <segmentedControl verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OLd-J8-Vye">
+                                <rect key="frame" x="18" y="3" width="140" height="24"/>
+                                <segmentedCell key="cell" borderStyle="border" alignment="left" style="rounded" trackingMode="selectOne" id="AbV-9W-y1B">
+                                    <font key="font" metaFont="system"/>
+                                    <segments>
+                                        <segment label="normal" width="67" selected="YES"/>
+                                        <segment label="swiftjson" width="66" tag="1"/>
+                                    </segments>
+                                </segmentedCell>
+                            </segmentedControl>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="4lv-dt-o4L" secondAttribute="trailing" constant="20" id="DWa-Na-IuD"/>
-                            <constraint firstItem="776-bT-xIH" firstAttribute="leading" secondItem="B7p-re-8K4" secondAttribute="leading" constant="20" id="Heo-Ys-ZLq"/>
-                            <constraint firstItem="4lv-dt-o4L" firstAttribute="centerY" secondItem="B7p-re-8K4" secondAttribute="centerY" id="UVw-TU-OO8"/>
+                            <constraint firstItem="OLd-J8-Vye" firstAttribute="leading" secondItem="B7p-re-8K4" secondAttribute="leading" constant="20" id="4s9-bd-Dsa"/>
+                            <constraint firstAttribute="trailing" secondItem="4lv-dt-o4L" secondAttribute="trailing" constant="20" id="FgB-bx-pcc"/>
+                            <constraint firstItem="OLd-J8-Vye" firstAttribute="centerY" secondItem="B7p-re-8K4" secondAttribute="centerY" id="lNd-XZ-x3B"/>
+                            <constraint firstItem="4lv-dt-o4L" firstAttribute="centerY" secondItem="B7p-re-8K4" secondAttribute="centerY" id="m1M-3D-4cw"/>
                             <constraint firstAttribute="height" constant="30" id="ouI-kr-sXT"/>
-                            <constraint firstItem="776-bT-xIH" firstAttribute="centerY" secondItem="B7p-re-8K4" secondAttribute="centerY" id="v4E-Ca-zmf"/>
+                            <constraint firstItem="4lv-dt-o4L" firstAttribute="leading" secondItem="776-bT-xIH" secondAttribute="trailing" constant="12" id="r23-2W-U60"/>
+                            <constraint firstItem="776-bT-xIH" firstAttribute="centerY" secondItem="B7p-re-8K4" secondAttribute="centerY" id="tuk-sU-5Jk"/>
                         </constraints>
                     </customView>
                 </subviews>
@@ -199,6 +212,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
+            <point key="canvasLocation" x="377" y="189"/>
         </window>
     </objects>
 </document>
