@@ -31,15 +31,6 @@ class SwiftJsonToObj: NSObject {
 
     func createMenuItems() {
         removeObserver()
-
-        let item = NSApp.mainMenu!.itemWithTitle("Edit")
-        if item != nil {
-            let actionMenuItem = NSMenuItem(title:"Do Action", action:"doMenuAction", keyEquivalent:"")
-            actionMenuItem.target = self
-            item!.submenu!.addItem(NSMenuItem.separatorItem())
-            item!.submenu!.addItem(actionMenuItem)
-        }
-        
         
         if let mainMenu = NSApp.mainMenu {
             if let item = mainMenu.itemWithTitle("Edit") {
