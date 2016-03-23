@@ -18,7 +18,10 @@ class SwiftJsonToObj: NSObject {
         self.bundle = bundle
 
         super.init()
-        center.addObserver(self, selector: Selector("createMenuItems"), name: NSApplicationDidFinishLaunchingNotification, object: nil)
+//        center.addObserver(self, selector: Selector("createMenuItems"), name: NSApplicationDidFinishLaunchingNotification, object: nil)
+        
+        
+        center.addObserver(self, selector: #selector(SwiftJsonToObj.createMenuItems), name: NSApplicationDidFinishLaunchingNotification, object: nil)
     }
 
     deinit {

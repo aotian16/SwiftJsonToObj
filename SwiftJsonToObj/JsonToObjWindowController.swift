@@ -83,7 +83,9 @@ class JsonToObjWindowController: NSWindowController {
                 if attr.type.containsString("[") && attr.type.containsString("]") { // array
                     
                     if attr.type.containsString("Obj") { // object
-                        let range = Range<String.Index>(start: attr.type.startIndex.advancedBy(1), end: attr.type.endIndex.advancedBy(-1))
+//                        let range = Range<String.Index>(start: attr.type.startIndex.advancedBy(1), end: attr.type.endIndex.advancedBy(-1))
+                        
+                        let range = Range(attr.type.startIndex.advancedBy(1)..<attr.type.endIndex.advancedBy(-1))
                         let ojbStr = attr.type.substringWithRange(range)
                         clsStr += "        if let arr = json[\"\(attr.name)\"].array {" + "\r\n"
                         clsStr += "            var tempArr = [\(ojbStr)]()" + "\r\n"
@@ -95,7 +97,9 @@ class JsonToObjWindowController: NSWindowController {
                         clsStr += "            return nil" + "\r\n"
                         clsStr += "        }" + "\r\n"
                     } else { // base
-                        let range = Range<String.Index>(start: attr.type.startIndex.advancedBy(1), end: attr.type.endIndex.advancedBy(-1))
+//                        let range = Range<String.Index>(start: attr.type.startIndex.advancedBy(1), end: attr.type.endIndex.advancedBy(-1))
+                        
+                        let range = Range(attr.type.startIndex.advancedBy(1)..<attr.type.endIndex.advancedBy(-1))
                         let ojbStr = attr.type.substringWithRange(range)
                         clsStr += "        if let arr = json[\"\(attr.name)\"].array {" + "\r\n"
                         clsStr += "            var tempArr = [\(ojbStr)]()" + "\r\n"
